@@ -1,0 +1,39 @@
+---- node Matches (39 in 11 files) ----
+Link_list.c:	h = (linklist)malloc (sizeof (linknode));
+Link_list.c:linklist GetLinknode (linklist h)
+Link_list.c:int InsertLinknode (link_datatype x)
+Link_list.c:	linklist q = (linklist)malloc (sizeof (linknode));
+Link_list.c:		printf ("InsertLinknode Error\n");
+Link_list.h:typedef struct _node_
+Link_list.h:	struct _node_ *next;
+Link_list.h:}linknode, *linklist;
+Link_list.h:extern linklist GetLinknode (linklist h);
+Link_list.h:extern int InsertLinknode (link_datatype x);
+Pthread_analysis.c:	sqlite_InsertLinknode (COLLECT_INSERTER, all_info_RT, sto_no, 0);//0,0分别是仓库号和货物种类号
+Pthread_analysis.c:		sqlite_InsertLinknode (GOODS_ADD, all_info_RT, sto_no, pack.goodsno);//0,0分别是仓库号和货物种类号
+Pthread_analysis.c:		sqlite_InsertLinknode (GOODS_REDUCE, all_info_RT, sto_no, pack.goodsno);//0,0分别是仓库号和货物种类号
+Pthread_analysis.c:	linklist node;
+Pthread_analysis.c:			if ((node = GetLinknode (linkHead)) == NULL)
+Pthread_analysis.c:			buf = node->data;
+Pthread_analysis.c:			free (node);
+Pthread_client_request.c:					sqlite_InsertLinknode (ENV_UPDATE, all_info_RT, sto_no, 0);//0,0分别是仓库号和货物种类号
+Pthread_sqlite.c:			if ((buf = sqlite_GetLinknode (slinkHead)) == NULL)
+Pthread_transfer.c:			if ((InsertLinknode (buf)) == -1)
+Sqlite3.h:** sync operation only needs to flush data to mass storage.  Inode
+Sqlite3.h:** and not its inode needs to be synced.
+Sqlite_link_list.c:	h = (slinklist)malloc (sizeof (slinknode));
+Sqlite_link_list.c:	printf ("%d\n", sizeof (slinknode));
+Sqlite_link_list.c:slinklist sqlite_GetLinknode (slinklist h)
+Sqlite_link_list.c:int sqlite_InsertLinknode (int operation, struct env_info_clien_addr y, 
+Sqlite_link_list.c:	slinklist q = (slinklist)malloc (sizeof (slinknode));
+Sqlite_link_list.c:		printf ("InsertLinknode Error\n");
+Sqlite_link_list.h:typedef struct _snode_
+Sqlite_link_list.h:	struct _snode_ *next;
+Sqlite_link_list.h:}slinknode, *slinklist;
+Sqlite_link_list.h:extern slinklist sqlite_GetLinknode (slinklist h);
+Sqlite_link_list.h:extern int sqlite_InsertLinknode (int x, struct env_info_clien_addr y, 
+Uart_cache.c:	h = (uart_cache_list) malloc (sizeof (uart_cache_node));
+Uart_cache.c:	uart_cache_list q = (uart_cache_list)malloc (sizeof (uart_cache_node));
+Uart_cache.h:typedef struct _uart_node_
+Uart_cache.h:	struct _uart_node_ *next;
+Uart_cache.h:}uart_cache_node, *uart_cache_list;

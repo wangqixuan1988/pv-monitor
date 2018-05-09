@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Test</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>	
+	<script>
+		
+		//图表属性，不包含数据
+		var options = {
+			chart: {
+				renderTo:'container',
+				type:'spline',
+			},
+			title: {
+          text: '实时电压监控曲线',
+          x: -20 //center
+      },
+      
+      xAxis:{
+      },
+      yAxis: {
+          title: {
+              text: 'Voltage (v)'
+          },
+          plotLines: [{
+              value: 0,
+              width: 1,
+              color: '#808080'
+          }]
+      },
+      series: [{
+        	name:'电压',
+      }],
+      tooltip: {
+          valueSuffix: 'V'
+      },
+      
+      plotOptions: {
+			    spline:{
+			    	dataLabels: {
+		           enabled: true
+		        },
+		        animation:false,
+		      },
+			},
+   };
+   
+   //初始函数，设置定时器，定时取数据
+		$(function () {
+	    queryData(0);
+	   
+	   	var i=0;
+	    var timer = setInterval(function(){
+	    	i++;
+	    	if(i>=3) {i=0;}
+	    	queryData(i);
+	    },3000);
+	    
+	    //停止刷新
+	    $("button").click(function(){
+	    	clearInterval(timer);
+	    });
+		});
+		
+		var categories = [];
+		var datas = [];
+		
+		//Ajax 获取数据并解析创建Highcharts图表
+		function queryData(index) {
+			$.ajax({
+				url:'getDatas.php?index='+index,
+				type:'get',
+				dataType:"json",
+				success:function(data) {
+						
+						$.each(data,function(i,n){
+							categories[i] = n[1];
+							datas[i] = n[2]*1;
+						});
+						
+						options.xAxis.categories = categories;
+						options.series[0].data = datas;
+						
+						chart = new Highcharts.Chart(options);
+		 		}
+			});
+		}
+		
+	
+	</script>
+</head>
+
+<body>
+	<div id="container" style="min-width:800px;height:400px;"></div>
+	<p align=center><button>停止刷新</button></p>
+
+</body>
+
+</html>

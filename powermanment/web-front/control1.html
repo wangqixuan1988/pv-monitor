@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>一号仓库远程控制</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F8F9FA;
+}
+.left_txt2 table {
+	font-size: 14px;
+}
+-->
+</style>
+
+<link href="images/skin.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+body,td,th {
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="17" height="29" valign="top" background="images/mail_leftbg.gif"><img src="images/left-top-right.gif" width="17" height="29" /></td>
+    <td width="1389" height="29" valign="top" background="images/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+      <tr>
+        <td height="31"><div class="titlebt">远程控制</div></td>
+      </tr>
+    </table></td>
+    <td width="24" valign="top" background="images/mail_rightbg.gif"><img src="images/nav-right-bg.gif" width="16" height="29" /></td>
+  </tr>
+  <tr>
+    <td height="71" valign="middle" background="images/mail_leftbg.gif">&nbsp;</td>
+    <td valign="top" bgcolor="#F7F8F9"><table width="100%" height="644" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="13" valign="top">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="625" valign="top"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="27" class="left_txt">当前位置：远程控制</td>
+          </tr>
+          <tr>
+            <td height="20"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+              <tr>
+                <td></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="100%" height="62" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="10%" height="62" valign="middle"><img src="images/control.png" width="54" height="55"></td>
+              <td width="90%" valign="top"><span class="left_txt2">在这里，您可以根据您的控制要求，远程控制A8板和M0板的</span><span class="left_txt3">资源</span><span class="left_txt2">！</span><br>
+                          <span class="left_txt2">包括 </span><span class="left_txt3">Led，Beep，Seg，Fan</span><span class="left_txt2">等</span><span class="left_txt2">。 </span></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="nowtable">
+              <tr>
+                <td align="left" class="left_bt2">&nbsp;&nbsp;&nbsp;&nbsp;A8板远程控制</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="375"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <!--a8设备控制-->			
+     		<tr>
+            	<form id="ctl_a8_dev" name="ctl_a8_dev" method="post" action="cgi-bin/ctl_a8_dev.cgi">
+                <td width="20%" height="30" align="right" bgcolor="#f2f2f2" class="left_txt2">Led1:</td>
+                <td width="2%" height="30" bgcolor="#f2f2f2">
+                <input style="display:none" name="device" type="text" id="device" value="led1:" size="5" maxlength="5"/></td>
+                <td width="14%" height="30" bgcolor="#f2f2f2">
+                <input type="radio" name="led1" id="led1_on" value="on" />
+                开
+                <input type="radio" name="led1" id="led1_off" value="off" />
+                关
+                </td>
+                <td width="64%" height="30" bgcolor="#f2f2f2" class="left_txt">
+                <input type="submit" value="确认提交" name="submit_led1" id="submit_led1"/></td>
+              </form>
+              </tr>
+              <tr>
+              	<form id="ctl_a8_dev" name="ctl_a8_dev" method="post" action="cgi-bin/ctl_a8_dev.cgi">
+                <td height="30" align="right" class="left_txt2">Led2:</td>
+                <td height="30">
+                <input style="display:none" name="device" type="text" id="device" value="led2:" size="5" maxlength="5"/></td>
+                <td height="30">
+                <input type="radio" name="led2" id="led2_on" value="on" />
+                开
+  				<input type="radio" name="led2" id="led2_off" value="off" />
+                关
+                </td>
+                <td height="30" class="left_txt">
+                <input type="submit" value="确认提交" name="submit_led2" id="submit_led2"/></td>
+                </form>
+              </tr>
+         <!--     <tr>
+              	<form id="ctl_a8_dev" name="ctl_a8_dev" method="post" action="cgi-bin/ctl_a8_dev.cgi">
+                <td height="30" align="right" bgcolor="#f2f2f2" class="left_txt2">Led3:</td>
+                <td height="30" bgcolor="#f2f2f2">
+                <input style="display:none" name="device" type="text" id="device" value="led3:" size="5" maxlength="5"/></td>
+                <td height="30" bgcolor="#f2f2f2">
+                <input type="radio" name="led3" id="led3_on" value="on" />
+                开
+  				<input type="radio" name="led3" id="led3_off" value="off" />
+                关
+                </td>
+                <td height="30" bgcolor="#f2f2f2" class="left_txt">
+                <input type="submit" value="确认提交" name="submit_led3" id="submit_led3" /></td>
+                </form>
+              </tr>
+              <tr>
+              	<form id="ctl_a8_dev" name="ctl_a8_dev" method="post" action="cgi-bin/ctl_a8_dev.cgi">
+                <td height="30" align="right" class="left_txt2">Led4:</td>
+                <td height="30">
+                <input style="display:none" name="device" type="text" id="device" value="led4:" size="5" maxlength="5"/>;</td>
+                <td height="30">
+                <input type="radio" name="led4" id="led4_on" value="on" />
+                开
+  				<input type="radio" name="led4" id="led4_off" value="off" />
+                关
+                </td>
+				<td height="30" class="left_txt">
+                <input type="submit" value="确认提交" name="submit_led4" id="submit_led4" /></td>
+                </form>
+              </tr>
+			  -->
+			  <tr>
+             	<form id="ctl_a8_dev" name="ctl_a8_dev" method="post" action="cgi-bin/ctl_a8_dev.cgi">
+                <td height="30" align="right" bgcolor="#f2f2f2" class="left_txt2">Beep:</td>
+                <td height="30" bgcolor="#f2f2f2">
+                <input style="display:none" name="device" type="text" id="device" value="beep:" size="5" maxlength="5"/></td>
+                <td height="30" bgcolor="#f2f2f2">
+                <input type="radio" name="beep" id="beep_on" value="on" />
+                开
+  				<input type="radio" name="beep" id="beep_off" value="off" />
+                关
+                </td>
+                <td height="30" bgcolor="#f2f2f2" class="left_txt">
+                <input type="submit" value="确认提交" name="submit_beep" id="submit_beep" /></td>
+                </form>
+              </tr>
+              <tr>
+                <td height="24" colspan="4" align="right" >&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="30" colspan="4" align="right" class="left_txt2"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="nowtable">
+                  <tr>
+                    <td align="left" class="left_bt2">&nbsp;&nbsp;&nbsp;&nbsp;M0板远程控制</td>
+                  </tr>
+                </table></td>
+              </tr>
+              <!--一号仓库m0设备控制-->	
+              <tr>
+                <td height="30" colspan="4" class="left_txt2"><table width="100%" height="99" border="0" cellpadding="0" cellspacing="0">
+                  <tr class="left_txt2">
+             		<form id="ctl_1_m0_dev" name="ctl_1_m0_dev" method="post" action="cgi-bin/ctl_1_m0_dev.cgi">
+                    <td width="20%" height="30" align="right" bgcolor="#f2f2f2" class="left_txt"><span style="line-height: 25px; color: #000000; font-size: 12px;">Led</span>:</td>
+                    <td width="2%" height="30" align="right" bgcolor="#f2f2f2" class="left_txt">
+                	<input style="display:none" name="device" type="text" id="device" value="led:" size="4" maxlength="4"/></td>
+                    <td width="14%" height="30" bgcolor="#f2f2f2" class="left_txt">
+                    <input type="radio" name="led" id="m0_led_on" value="on" />
+                    开 
+                    <input type="radio" name="led" id="m0_led_off" value="off" />
+                    关
+                    </td>
+                    <td width="64%" height="30" align="left" bgcolor="#f2f2f2" class="left_txt">
+                    <input type="submit" value="确认提交" name="submit_led" id="submit_m0_led" /></td>
+                    </form>
+                    </tr>
+                  <tr>
+                  	<form id="ctl_1_m0_dev" name="ctl_1_m0_dev" method="post" action="cgi-bin/ctl_1_m0_dev.cgi">
+                    <td height="30" align="right" class="left_txt2">Beep:</td>
+                    <td height="30" align="right" class="left_txt">
+                	<input style="display:none" name="device" type="text" id="device" value="beep:" size="5" maxlength="5"/></td>
+                    <td height="30" class="left_txt">
+                    <input type="radio" name="beep" id="m0_beep_on" value="on" />
+                    开
+                    <input type="radio" name="beep" id="m0_beep_off" value="off" />
+                    关
+                    </td>
+                    <td height="30" align="left" class="left_txt">
+                    <input type="submit" value="确认提交" name="submit_beep" id="submit_m0_beep" /></td>
+                    </form>
+                    </tr>
+                  <tr>
+                  	<form id="ctl_1_m0_dev" name="ctl_1_m0_dev" method="post" action="cgi-bin/ctl_1_m0_dev.cgi">
+                    <td height="30" align="right" bgcolor="#f2f2f2" class="left_txt2">Seg:</td>
+                    <td height="30" align="right" bgcolor="#f2f2f2" class="left_txt">
+                	<input style="display:none" name="device" type="text" id="device" value="seg:" size="4" maxlength="4"/></td>
+                    <td height="30" bgcolor="#f2f2f2" class="left_txt">
+                      <input type="radio" name="seg" id="m0_seg_on" value="on" />
+                      开 
+                      <input type="radio" name="seg" id="m0_seg_off" value="off" />
+                      关
+                      <input name="seg_val" type="text" id="m0_seg_val" value="8" size="1" maxlength="1"/>
+                     </td>
+                    <td height="30" align="left" bgcolor="#f2f2f2" class="left_txt">
+                    <input type="submit" value="确认提交" name="submit_seg" id="submit_m0_seg" /></td>
+                    </form>
+                    </tr>
+                  <tr>
+                  	<form id="ctl_1_m0_dev" name="ctl_1_m0_dev" method="post" action="cgi-bin/ctl_1_m0_dev.cgi">
+                    <td height="30" align="right" class="left_txt2">Fan:</td>
+                    <td height="30" align="right" class="left_txt">
+                	<input style="display:none" name="device" type="text" id="device" value="fan:" size="4" maxlength="4"/></td>
+                    <td height="30" class="left_txt">
+                    <input type="radio" name="fan" id="m0_fan_on1" value="on1" />
+                    1&nbsp; 
+                    <input type="radio" name="fan" id="m0_fan_on2" value="on2" />
+                    2&nbsp; 
+                    <input type="radio" name="fan" id="m0_fan_on3" value="on3" />
+					3&nbsp; 
+					<input type="radio" name="fan" id="m0_fan_off" value="off" />
+					关
+                    </td>
+                    <td height="30" align="left" class="left_txt">
+                    <input type="submit" value="确认提交" name="submit_fan" id="submit_m0_fan" /></td>
+                    </form>
+                    </tr>
+                  <tr>
+                    <td colspan="4" align="right">&nbsp;</td>
+                    </tr>
+                  <tr>
+                    <td colspan="4" align="right">&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+              </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td background="images/mail_rightbg.gif">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="middle" background="images/mail_leftbg.gif"><img src="images/buttom_left2.gif" width="17" height="17" /></td>
+      <td height="17" valign="top" background="images/buttom_bgs.gif"><img src="images/buttom_bgs.gif" width="17" height="17" /></td>
+    <td background="images/mail_rightbg.gif"><img src="images/buttom_right2.gif" width="16" height="17" /></td>
+  </tr>
+</table>
+
+</body>
+</html>
